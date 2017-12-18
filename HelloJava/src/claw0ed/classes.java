@@ -47,6 +47,27 @@ public class classes {
 		System.out.println(eagle.weight);
 		System.out.println(eagle.type);
 		System.out.println(eagle.gender);
+	
+		Animal tiger2 = new Animal();
+		System.out.println(tiger2.name);
+		System.out.println(tiger2.gender);
+		System.out.println(tiger2.weight);
+		System.out.println(tiger2.type);
+		
+		Animal cat = new Animal();
+		System.out.println(cat.name);
+		System.out.println(cat.type);
+		
+		cat = new Animal("고순이", 25, "여자", "고양이");
+		
+		// 회원가입
+		Member m = new Member();
+		m.userid ="";
+		m.name = "";
+		
+		m = new Member("zzyzzy", "987456", "혜교", "asd@asd.com", "2017-12-15");
+		
+		
 	}
 
 }
@@ -57,6 +78,33 @@ class Animal { // 동물 클래스
 	int weight;
 	String gender;
 	String type;
+	
+//	Animal() {
+//		name = "호순이";
+//		type = "호랑이";
+//		gender = "여자";
+//		weight = 45;
+//	} // (매개변수parameter 없는)생성자
+	
+//	Animal(String name, int weight, String gender, String type) {
+//		this.name = name;
+//		this.weight = weight;
+//		this.gender = gender;
+//		this.type = type;
+//	} // 매개변수 있는 생성자
+	
+	// 기본 생성자
+	Animal() {
+		
+	}
+	
+	// 매개변수가 있는 생성자
+	public Animal(String name, int weight, String gender, String type) {
+		this.name = name;
+		this.weight = weight;
+		this.gender = gender;
+		this.type = type;
+	}
 	
 	// 메서드
 	void move() { System.out.println(name + "가 움직였다"); }
@@ -77,3 +125,28 @@ class Car {
 class Engin {}
 class Door {}
 class Wheel {}
+
+class Member {
+	String userid;
+	String passwd;
+	String name;
+	String email;
+	String regdata;
+	
+	// 기본생성자  - 매개 변수가 있으면 기본 생성자를 자동으로 생성해 주지 않음
+	public Member() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	// 매개변수가 있는 생성자
+	public Member(String userid, String passwd, String name, String email, String regdata) {
+		this.userid = userid;
+		this.passwd = passwd;
+		this.name = name;
+		this.email = email;
+		this.regdata = regdata;
+	}
+	
+	
+	
+}
