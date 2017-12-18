@@ -22,6 +22,17 @@ public class AccessControl {
 		
 		// System.out.println(dc.regdate);
 		System.out.println(dc.getRegdate()); // getter
+		
+		// 객체의 생성값 확인 - 참조주소
+		defaultClass dc1 = new defaultClass();
+		System.out.println(dc1); // 메모리 주소
+		
+		dc1 = new defaultClass();
+		System.out.println(dc1);
+		
+		dc1 = new defaultClass();
+		System.out.println(dc1);
+		
 	}
 
 }

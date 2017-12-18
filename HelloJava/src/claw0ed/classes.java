@@ -1,5 +1,7 @@
 package claw0ed;
 
+import claw0ed.lab.SungJukV0;
+
 public class classes {
 
 	public static void main(String[] args) {
@@ -67,6 +69,9 @@ public class classes {
 		
 		m = new Member("zzyzzy", "987456", "혜교", "asd@asd.com", "2017-12-15");
 		
+		// SungJukV0 클래스를 이용하기
+		SungJukV0 sj = new SungJukV0("혜교", 99, 98, 78);
+		System.out.printf("%s %d %d %d", sj.getName(), sj.getKor(), sj.getEng(), sj.getMat());
 		
 	}
 
@@ -94,7 +99,7 @@ class Animal { // 동물 클래스
 //	} // 매개변수 있는 생성자
 	
 	// 기본 생성자
-	Animal() {
+	public Animal() {
 		
 	}
 	
@@ -109,6 +114,40 @@ class Animal { // 동물 클래스
 	// 메서드
 	void move() { System.out.println(name + "가 움직였다"); }
 	void eat() { System.out.println(name + "가 먹이를 먹었다"); }
+
+	// setter/getter
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }
 
 class Car {
