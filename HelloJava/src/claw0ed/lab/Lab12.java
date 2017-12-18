@@ -4,14 +4,14 @@ public class Lab12 {
 
 	public static void main(String[] args) {
 		//  고객, 도서, 주문, 학생, 학과, 과목, 교수
-		Customer c = new Customer();
-		c.cno = "1";
-		c.name = "박지성";
-		c.jumin = "810101-1111111";
-		c.addr = "영국 런던";
-		c.mphone = "000-5000-0001";
-		
-		c = new Customer("2", "김연아", "900101-2000000", "한국 서울", "000-6000-0001");
+//		Customer c = new Customer();
+//		c.cno = "1";
+//		c.name = "박지성";
+//		c.jumin = "810101-1111111";
+//		c.addr = "영국 런던";
+//		c.mphone = "000-5000-0001";
+//		
+//		c = new Customer("2", "김연아", "900101-2000000", "한국 서울", "000-6000-0001");
 
 		Books bk = new Books();
 		bk.internationalStandardBookNumber = "1";
@@ -70,27 +70,27 @@ public class Lab12 {
 
 }
 
-class Customer {
-	String cno;
-	String name;
-	String jumin;
-	String addr;
-	String mphone;
-	
-	Customer() {
-		// TODO Auto-generated constructor stub
-	}
-
-	Customer(String cno, String name, String jumin, String addr, String mphone) {
-		this.cno = cno;
-		this.name = name;
-		this.jumin = jumin;
-		this.addr = addr;
-		this.mphone = mphone;
-	}
-	
-	
-}
+//class Customer {
+//	String cno;
+//	String name;
+//	String jumin;
+//	String addr;
+//	String mphone;
+//	
+//	Customer() {
+//		// TODO Auto-generated constructor stub
+//	}
+//
+//	Customer(String cno, String name, String jumin, String addr, String mphone) {
+//		this.cno = cno;
+//		this.name = name;
+//		this.jumin = jumin;
+//		this.addr = addr;
+//		this.mphone = mphone;
+//	}
+//	
+//	
+//}
 
 class Books {
 	String internationalStandardBookNumber; // 번호 ISBN
