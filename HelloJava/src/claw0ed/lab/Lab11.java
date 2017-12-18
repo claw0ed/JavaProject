@@ -82,6 +82,9 @@ public class Lab11 {
 		
 		System.out.println(jumin);
 		System.out.println(jumin);
+		System.out.println(jumin);
+		System.out.println(jumin);
+		System.out.println(jumin);
 		
 	}
 
