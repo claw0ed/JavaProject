@@ -72,6 +72,7 @@ public class classes {
 		// SungJukV0 클래스를 이용하기
 		SungJukV0 sj = new SungJukV0("혜교", 99, 98, 78);
 		System.out.printf("%s %d %d %d", sj.getName(), sj.getKor(), sj.getEng(), sj.getMat());
+		System.out.println(sj);
 		
 	}
 

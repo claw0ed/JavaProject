@@ -10,6 +10,7 @@ public class SungJukV0 {
 	private int kor;
 	private int eng;
 	private int mat;
+	private int tot;
 	private double avrg;
 	private String grd;
 	
@@ -63,8 +64,17 @@ public class SungJukV0 {
 	}
 
 
-	public void setMat(int mat) {
-		this.mat = mat;
+	public void setMat(int tot) {
+		this.tot = tot;
+	}
+	
+	public int getTot() {
+		return tot;
+	}
+	
+	
+	public void setTot(int tot) {
+		this.tot = tot;
 	}
 
 
@@ -86,8 +96,12 @@ public class SungJukV0 {
 	public void setGrd(String grd) {
 		this.grd = grd;
 	}
-	
+
 	// toString
-	
+	@Override // 어노테이션 - 컴파일러한테 전달하는 메세지
+	public String toString() {
+		return "SungJukV0 [name=" + name + ", kor=" + kor + ", eng=" + eng + ", mat=" + mat + ", tot=" + tot + ", avrg="
+				+ avrg + ", grd=" + grd + "]";
+	}
 
 }
