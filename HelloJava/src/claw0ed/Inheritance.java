@@ -14,7 +14,7 @@ public class Inheritance {
 
 }
 
-class Animals {
+class Animals extends Object {
 	protected String eye; // 상속 관계에서는 protected 사용 (그래야 상속관계에서 사용할 수 있음)
 	protected String mouth;
 	protected String hp;
