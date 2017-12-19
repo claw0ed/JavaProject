@@ -6,46 +6,57 @@ public class Lab13 {
 		// 37, 38, 39
 		
 		// 37
-		Person ps = new Person();
-		ps.name = "이름";
-		ps.addr = "주소";
-		ps.mphone = "전화번호";
-		System.out.printf("%s %s %s \n",ps.name, ps.addr, ps.mphone);
+		Person 혜교 = new Person();
+		System.out.println(혜교);
 		
-		Customer cm = new Customer("이름", "주소", "전화번호", "고객번호", "마일리지");
-		System.out.println(cm.toString());
+//		String name = "혜교";
+//		String addr = "서울";
+//		String telno = "123-4567";
+//		System.out.printf("%s %s %s \n", name, addr, telno);
+		
+		Person 지현 = new Person("지현", "인천", "987-6543");
+		System.out.println(지현);
+		
+		Customer cm = new Customer();
+		System.out.println(cm);
 		
 		// 38
-		Book bk = new Book("제목", "페이지수", "저자");
-		System.out.println(bk.toString());
+		Book bk = new Book();
+		System.out.println(bk);
 		
-		Magazine mz = new Magazine("제목", "페이지수", "저자", "발매일");
-		System.out.println(mz.toString());
+		Magazine mz = new Magazine();
+		System.out.println(mz);
 		
 		// 39
-		Phone ph = new Phone("제조사", 100, "통신타입");
-		System.out.println(ph.toString());
+		Phone ph = new Phone();
+		System.out.println(ph);
 		
-		SmartPhone sp = new SmartPhone("제조사", 100, "통신타입", "운영체제버전", "내부메모리크기", true, false);
+		SmartPhone sp = new SmartPhone();
+		System.out.println(sp);
 		System.out.println(sp.toString());
 	}
 
 }
 
+// Person : 이름, 주소, 전화번호 - V0 클래스
 class Person {
-	String name;
-	String addr;
-	String mphone;
+	// 맴버변수
+	private String name;  // 이름
+	private String addr;  // 주소
+	private String telno; // 전화번호
 	
+	// 생성자
 	public Person() {
+		this("혜교", "서울", "123-4567");
 	}
 
-	public Person(String name, String addr, String mphone) {
+	public Person(String name, String addr, String telno) {
 		this.name = name;
 		this.addr = addr;
-		this.mphone = mphone;
+		this.telno = telno;
 	}
 
+	// setter/getter
 	public String getName() {
 		return name;
 	}
@@ -62,36 +73,38 @@ class Person {
 		this.addr = addr;
 	}
 
-	public String getMphone() {
-		return mphone;
+	public String gettelno() {
+		return telno;
 	}
 
-	public void setMphone(String mphone) {
-		this.mphone = mphone;
+	public void settelno(String telno) {
+		this.telno = telno;
 	}
 
+	// toString
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", addr=" + addr + ", mphone=" + mphone + "]";
+		return "Person [name=" + name + ", addr=" + addr + ", telno=" + telno + "]";
 	}
 	
 }
 
 class Customer {
-	String name;
-	String addr;
-	String mphone;
-	String NumberOfCustomer; // 고객번호
-	String mileage; // 마일리지
+	private int custno;  // 고객번호
+	private int mileage; // 마일리지
+	private String name;
+	private String addr;
+	private String telno;
 	
 	public Customer() {
+		this(1, "혜교", "서울", "123-4567", 1000);
 	}
 
-	public Customer(String name, String addr, String mphone, String numberOfCustomer, String mileage) {
+	public Customer(int custno, String name, String addr, String telno, int mileage) {
 		this.name = name;
 		this.addr = addr;
-		this.mphone = mphone;
-		NumberOfCustomer = numberOfCustomer;
+		this.telno = telno;
+		this.custno = custno;
 		this.mileage = mileage;
 	}
 
@@ -111,266 +124,270 @@ class Customer {
 		this.addr = addr;
 	}
 
-	public String getMphone() {
-		return mphone;
+	public String gettelno() {
+		return telno;
 	}
 
-	public void setMphone(String mphone) {
-		this.mphone = mphone;
+	public void settelno(String telno) {
+		this.telno = telno;
 	}
 
-	public String getNumberOfCustomer() {
-		return NumberOfCustomer;
+	public int getcustno() {
+		return custno;
 	}
 
-	public void setNumberOfCustomer(String numberOfCustomer) {
-		NumberOfCustomer = numberOfCustomer;
+	public void setcustno(int custno) {
+		this.custno = custno;
 	}
 
-	public String getMileage() {
+	public int getMileage() {
 		return mileage;
 	}
 
-	public void setMileage(String mileage) {
+	public void setMileage(int mileage) {
 		this.mileage = mileage;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", addr=" + addr + ", mphone=" + mphone + ", NumberOfCustomer="
-				+ NumberOfCustomer + ", mileage=" + mileage + "]";
+		return "Customer [name=" + name + ", addr=" + addr + ", telno=" + telno + ", custno="
+				+ custno + ", mileage=" + mileage + "]";
 	}
 		
 }
 
 class Book {
-	String book; // 제목
-	String page; // 페이지수
-	String name; // 저자
+	private String title;  // 제목
+	private int pages;     // 페이지수
+	private String author; // 저자
 	
 	public Book() {
+		this("자바정석", 500, "남궁 성");
 	}
 
-	public Book(String book, String page, String name) {
-		this.book = book;
-		this.page = page;
-		this.name = name;
+	public Book(String title, int pages, String author) {
+		this.title = title;
+		this.pages = pages;
+		this.author = author;
 	}
 
-	public String getBook() {
-		return book;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setBook(String book) {
-		this.book = book;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getPage() {
-		return page;
+	public int getPages() {
+		return pages;
 	}
 
-	public void setPage(String page) {
-		this.page = page;
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 
-	public String getName() {
-		return name;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [book=" + book + ", page=" + page + ", name=" + name + "]";
+		return "Book [title=" + title + ", pages=" + pages + ", author=" + author + "]";
 	}
 	
 }
 
 class Magazine {
-	String book; // 제목
-	String page; // 페이지수
-	String name; // 저자
-	String release; // 발매일
+	private String title;   // 제목
+	private int pages;      // 페이지수
+	private String author;  // 저자
+	private String pubDate; // 발매일
 	
 	public Magazine() {
+		this("자바정석", 500, "남궁 성","2017-12");
 	}
 
-	public Magazine(String book, String page, String name, String release) {
-		this.book = book;
-		this.page = page;
-		this.name = name;
-		this.release = release;
+	public Magazine(String title, int pages, String author, String pubDate) {
+		this.title = title;
+		this.pages = pages;
+		this.author = author;
+		this.pubDate = pubDate;
 	}
 
-	public String getBook() {
-		return book;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setBook(String book) {
-		this.book = book;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getPage() {
-		return page;
+	public int getPages() {
+		return pages;
 	}
 
-	public void setPage(String page) {
-		this.page = page;
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 
-	public String getName() {
-		return name;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
-	public String getRelease() {
-		return release;
+	public String getPubDate() {
+		return pubDate;
 	}
 
-	public void setRelease(String release) {
-		this.release = release;
+	public void setPubDate(String pubDate) {
+		this.pubDate = pubDate;
 	}
 
 	@Override
 	public String toString() {
-		return "Magazine [book=" + book + ", page=" + page + ", name=" + name + ", release=" + release + "]";
+		return "Magazine [title=" + title + ", pages=" + pages + ", author=" + author + ", pubDate=" + pubDate + "]";
 	}
-	
+
 }
 
 class Phone {
-	String 제조사;
-	int 가격;
-	String 통신타입;
+	private String maker;
+	private int price;
+	private String type;
 	
 	public Phone() {
+		this("엘지", 500000, "4G");
 	}
 
-	public Phone(String 제조사, int 가격, String 통신타입) {
-		this.제조사 = 제조사;
-		this.가격 = 가격;
-		this.통신타입 = 통신타입;
+	public Phone(String maker, int price, String type) {
+		this.maker = maker;
+		this.price = price;
+		this.type = type;
 	}
 
-	public String get제조사() {
-		return 제조사;
+	public String getMaker() {
+		return maker;
 	}
 
-	public void set제조사(String 제조사) {
-		this.제조사 = 제조사;
+	public void setMaker(String maker) {
+		this.maker = maker;
 	}
 
-	public int get가격() {
-		return 가격;
+	public int getPrice() {
+		return price;
 	}
 
-	public void set가격(int 가격) {
-		this.가격 = 가격;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
-	public String get통신타입() {
-		return 통신타입;
+	public String getType() {
+		return type;
 	}
 
-	public void set통신타입(String 통신타입) {
-		this.통신타입 = 통신타입;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
-		return "Phone [제조사=" + 제조사 + ", 가격=" + 가격 + ", 통신타입=" + 통신타입 + "]";
+		return "Phone [maker=" + maker + ", price=" + price + ", type=" + type + "]";
 	}
 	
 }
 
 class SmartPhone {
-	String 제조사;
-	int 가격;
-	String 통신타입;
-	String 운영체제버전;
-	String 내부메모리크기;
-	boolean is카메라장착여부;
-	boolean is블루투스지원여부;
+	private String maker;
+	private int price;
+	private String type;
+	private String osVer;
+	private String memorySize;   // 내부메모리크기
+	private boolean isCarmera;   // 카메라장착여부
+	private boolean isBluetooth; // 블루투스지원여부
 	
 	public SmartPhone() {
+		this("엘지", 500000, "4G", "7.0", "32G", true, false);
 	}
 
-	public SmartPhone(String 제조사, int 가격, String 통신타입, String 운영체제버전, String 내부메모리크기, boolean is카메라장착여부,
-			boolean is블루투스지원여부) {
-		this.제조사 = 제조사;
-		this.가격 = 가격;
-		this.통신타입 = 통신타입;
-		this.운영체제버전 = 운영체제버전;
-		this.내부메모리크기 = 내부메모리크기;
-		this.is카메라장착여부 = is카메라장착여부;
-		this.is블루투스지원여부 = is블루투스지원여부;
+	public SmartPhone(String maker, int price, String type, String osVer, String memorySize, boolean isCarmera,
+			boolean isBluetooth) {
+		this.maker = maker;
+		this.price = price;
+		this.type = type;
+		this.osVer = osVer;
+		this.memorySize = memorySize;
+		this.isCarmera = isCarmera;
+		this.isBluetooth = isBluetooth;
 	}
 
-	public String get제조사() {
-		return 제조사;
+	public String getMaker() {
+		return maker;
 	}
 
-	public void set제조사(String 제조사) {
-		this.제조사 = 제조사;
+	public void setMaker(String maker) {
+		this.maker = maker;
 	}
 
-	public int get가격() {
-		return 가격;
+	public int getPrice() {
+		return price;
 	}
 
-	public void set가격(int 가격) {
-		this.가격 = 가격;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
-	public String get통신타입() {
-		return 통신타입;
+	public String getType() {
+		return type;
 	}
 
-	public void set통신타입(String 통신타입) {
-		this.통신타입 = 통신타입;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String get운영체제버전() {
-		return 운영체제버전;
+	public String getOsVer() {
+		return osVer;
 	}
 
-	public void set운영체제버전(String 운영체제버전) {
-		this.운영체제버전 = 운영체제버전;
+	public void setOsVer(String osVer) {
+		this.osVer = osVer;
 	}
 
-	public String get내부메모리크기() {
-		return 내부메모리크기;
+	public String getMemorySize() {
+		return memorySize;
 	}
 
-	public void set내부메모리크기(String 내부메모리크기) {
-		this.내부메모리크기 = 내부메모리크기;
+	public void setMemorySize(String memorySize) {
+		this.memorySize = memorySize;
 	}
 
-	public boolean isIs카메라장착여부() {
-		return is카메라장착여부;
+	public boolean isCarmera() {
+		return isCarmera;
 	}
 
-	public void setIs카메라장착여부(boolean is카메라장착여부) {
-		this.is카메라장착여부 = is카메라장착여부;
+	public void setCarmera(boolean isCarmera) {
+		this.isCarmera = isCarmera;
 	}
 
-	public boolean isIs블루투스지원여부() {
-		return is블루투스지원여부;
+	public boolean isBluetooth() {
+		return isBluetooth;
 	}
 
-	public void setIs블루투스지원여부(boolean is블루투스지원여부) {
-		this.is블루투스지원여부 = is블루투스지원여부;
+	public void setBluetooth(boolean isBluetooth) {
+		this.isBluetooth = isBluetooth;
 	}
 
 	@Override
 	public String toString() {
-		return "SmartPhone [제조사=" + 제조사 + ", 가격=" + 가격 + ", 통신타입=" + 통신타입 + ", 운영체제버전=" + 운영체제버전 + ", 내부메모리크기="
-				+ 내부메모리크기 + ", is카메라장착여부=" + is카메라장착여부 + ", is블루투스지원여부=" + is블루투스지원여부 + "]";
+		return "SmartPhone [maker=" + maker + ", price=" + price + ", type=" + type + ", osVer=" + osVer
+				+ ", memorySize=" + memorySize + ", isCarmera=" + isCarmera + ", isBluetooth=" + isBluetooth + "]";
 	}
 	
 }
