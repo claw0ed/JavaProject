@@ -12,7 +12,6 @@ public class Inheritance {
 		Animals g  = new Goldfish();
 	}
 
-	
 }
 
 class Animals {
