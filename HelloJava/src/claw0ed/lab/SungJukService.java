@@ -1,9 +1,9 @@
 package claw0ed.lab;
 
-public class SungJukService {
-	int tot = 0;
-	double avg = 0.0;
-	String grd = "가";
+public class SungJukService { // 서비스 클래스의 메소드는  private 선언
+	private int tot = 0;
+	private double avg = 0.0;
+	private String grd = "가";
 	
 	// getTotal
 	public int getTotal(int kot, int eng, int mat) {
@@ -16,6 +16,11 @@ public class SungJukService {
 	public int getTotal(SungJukV0 sj) {
 		tot = sj.getKor() + sj.getEng() + sj.getMat();
 		return tot;
+	}
+	
+	// 또 다른 유형의 getTotal
+	public void getTotal() {
+		
 	}
 	
 	// getAverage
