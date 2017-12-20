@@ -68,7 +68,7 @@ public class SungJukV1 {
 		//총점, 평균, 학점계산
 		tot = kor + eng + mat;
 		// avrg = (kor + eng + mat) / 3;
-		avrg =  (double) tot /3;
+		avrg =  (double) tot / 3;
 		grd = (avrg >= 90) ? '수' :
 			  (avrg >= 80) ? '우' :
 		      (avrg >= 70) ? '미' :
