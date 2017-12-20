@@ -12,6 +12,15 @@ public class CallSuper {
 		
 		Child2 c2 = new Child2();
 		
+		// 상속관계에서 형변환 - 다형성
+		Child c3 = new Child();
+		Parent p3 = new Parent();
+		
+		p3 = c3; // upcasting
+		p3 = new Child();
+		
+		c3 = (Child) p3; // downcasting, 명시적으로 형변환 필요
+		
 	}
 
 }
@@ -25,6 +34,18 @@ class Parent {
 	
 	public String sayName() {
 		return name;
+	}
+	
+	public void sayLove(Daughter d) {
+		System.out.println("사랑한다, 딸아!");
+	}
+	
+	public void sayLove(Son s) {
+		System.out.println("사랑한다, 아들아!");
+	}
+	
+	public void sayLove(Parent p) { // 매개변수를 하나로 쓸수있다
+		System.out.println("사랑한다, 애들아!");
 	}
 	
 }
@@ -62,5 +83,13 @@ class Child2 extends Parent2 {
 	public Child2() {
 		super("혜교");
 	}
+	
+}
+
+class Daughter extends Parent {
+	
+}
+
+class Son extends Parent {
 	
 }
