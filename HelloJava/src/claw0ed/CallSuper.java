@@ -86,10 +86,14 @@ class Child2 extends Parent2 {
 	
 }
 
-class Daughter extends Parent {
+final class Daughter extends Parent {
 	
 }
 
-class Son extends Parent {
+final class Son extends Parent {
 	
-}
+} // final - 상속되지 않는 클래스 선언
+
+//class GrandSon extends Son {
+//	
+//} // 상속 불가!
