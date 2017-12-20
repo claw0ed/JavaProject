@@ -21,6 +21,15 @@ public class CallSuper {
 		
 		c3 = (Child) p3; // downcasting, 명시적으로 형변환 필요
 		
+		// 상속관계에서 부모/자식 클래스 여부 확인
+		System.out.println("-----------------");
+		System.out.println(c instanceof Parent);
+		System.out.println("-----------------");
+		
+		Son son = new Son();
+		System.out.println(son instanceof Parent);
+		System.out.println("-----------------");
+		
 	}
 
 }
