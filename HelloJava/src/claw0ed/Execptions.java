@@ -1,11 +1,13 @@
 package claw0ed;
 
 import java.io.FileReader;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Execptions {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// 예외처리
 		
 		int[] intArray = { 9, 8, 7, 6, 5 };
@@ -55,6 +57,11 @@ public class Execptions {
 		}
 		
 		sc.close();
+		
+		// 데이터베이스 서버 접속 코드 - checked 예외
+		// throws 구문으로 이 메서드를 호출한 상위 메서드로
+		// 예외처리를 던짐(처리를 대신해달라고 떠넘김)
+		DriverManager.getConnection("...");
 		
 		System.out.println("이글이 보이나요?");
 	}
