@@ -3,8 +3,18 @@ package claw0ed;
 public class DefaultInterface {
 
 	public static void main(String[] args) {
-		// 
-
+		// 인터페이스 업캐스팅
+		SportCar sc = new SportCar();
+		sc.move();
+		sc.openRoof();
+		
+		// Movable isc = new Movable(); // 불가
+		Movable isc = new SportCar();
+		isc.move();
+		// isc.openRoof(); // SportCar()에만 존재
+		
+		SportCar spc = (SportCar) isc ; // 형변환 통해서 isc.openRoof() 사용 가능
+		spc.openRoof();
 	}
 
 }
