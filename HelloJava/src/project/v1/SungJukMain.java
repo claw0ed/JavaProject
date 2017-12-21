@@ -10,6 +10,7 @@ public class SungJukMain {
 		
 		// 성적 추가
 		sjsrv.addSungJuk(sj);
+		System.out.println(sj);
 		
 		// 성적 수정
 		sj = new SungJukV0("혜교", 55, 87, 12);

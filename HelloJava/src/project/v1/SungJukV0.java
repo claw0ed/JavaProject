@@ -87,8 +87,10 @@ public class SungJukV0 {
 
 	@Override
 	public String toString() {
-		return "SungJukV0 [name=" + name + ", kor=" + kor + ", eng=" + eng + ", mat=" + mat + ", tot=" + tot + ", avrg="
-				+ avrg + ", grd=" + grd + "]";
+		String fmt = "SungJukV0 [name=%s, kor=%d, eng=%d, mat=%d, tot=%d, avrg=%.1f, grd=%s]";
+		return String.format(fmt, name, kor, eng, mat, tot, avrg, grd);
+//		return "SungJukV0 [name=" + name + ", kor=" + kor + ", eng=" + eng + ", mat=" + mat + ", tot=" + tot + ", avrg="
+//				+ avrg + ", grd=" + grd + "]";
 	}
 	
 }
