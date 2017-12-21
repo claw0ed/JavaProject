@@ -1,5 +1,8 @@
 package claw0ed;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class Execptions {
 
 	public static void main(String[] args) {
@@ -15,6 +18,23 @@ public class Execptions {
 			System.out.println("오류발생!@");
 			// System.out.println(ex.getMessage()); // 오류 관련정보
 			// ex.printStackTrace();
+		}
+		
+		try {
+		int x = 1000 / 0;
+		} catch(Exception ex) {
+			System.out.println("0으로 나눌 수 없습니다");
+			System.out.println(ex.getMessage()); // 오류 관련정보
+			//ex.printStackTrace();
+		}
+		
+		// checked 예외
+		
+		String fpath = "c:/Java/abc.dat";
+		try {
+			FileReader fr = new FileReader(fpath);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		}
 		
 		System.out.println("이글이 보이나요?");
