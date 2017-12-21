@@ -14,7 +14,6 @@ public class CustomerV0 {
 //	private String telno;
 	
 	public CustomerV0() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public CustomerV0(int custno, String name, String jumin, String addr, String mphone) {

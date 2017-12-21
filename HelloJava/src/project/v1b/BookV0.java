@@ -12,11 +12,9 @@ public class BookV0 {
 //	String book;                            // 도서이름
 	
 	public BookV0() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public BookV0(String number, String title, String publisher, int price) {
-		super();
 		this.number = number;
 		this.title = title;
 		this.publisher = publisher;
@@ -57,7 +55,9 @@ public class BookV0 {
 
 	@Override
 	public String toString() {
-		return "BookV0 [number=" + number + ", title=" + title + ", publisher=" + publisher + ", price=" + price + "]";
+		String fmt = "BookV0 [number=%s, title=%s, publisher=%s, price=%d]";
+		return String.format(fmt, number, title, publisher, price);
+//		return "BookV0 [number=" + number + ", title=" + title + ", publisher=" + publisher + ", price=" + price + "]";
 	}
 	
 }
