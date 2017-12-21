@@ -46,8 +46,10 @@ public class Execptions {
 				int key = sc.nextInt();
 				if(key == 0) break;
 			} catch(Exception ex) {
-				System.out.println("숫자관련 예외발생");
-				break;
+				System.out.println("문자는 입력불가!");
+				// 무한반복 방지용 Scanner 초기화
+				sc = new Scanner(System.in);
+				// break;
 			}
 			
 		}
