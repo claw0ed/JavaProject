@@ -59,6 +59,20 @@ public class Exceptions2 {
 			System.out.println("잘못된 입력 사용!");
 		}
 		
+		// finally 블럭
+		// 오류가 발생해서 예외처리시
+		// 나머지 코드를 실행하지 않고 넘어감
+		// 이런 코드들 중 반드시 실행해야 할 경우
+		// finally 블럭에 작성하면 됨
+		try {
+			// 데이터베이스 서버 연결
+			// SQL 처리 및 기타작업
+			// 데이터베이스 서버 끊음 finally로 이동
+		} catch (Exception ex){
+			System.out.println("예외처리함");
+		} finally {
+			// 데이터베이스 서버 연결 끊음
+		}
 	}
 
 }
