@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Execptions {
+public class Exceptions {
 
 	public static void main(String[] args) throws SQLException {
 		// 예외처리
