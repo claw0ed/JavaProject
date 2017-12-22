@@ -40,6 +40,50 @@ public class Strings {
 		System.out.println(c4);
 		System.out.println(c5);
 		
+		// int compareTo (String str)
+		int i = "aaa".compareTo("aaa");
+		int i2 = "aaa".compareTo("bbb");
+		int i3 = "bbb".compareTo("aaa");
+		
+		System.out.println("int compareTo (String str)");
+		System.out.println(i);
+		System.out.println(i2);
+		System.out.println(i3);
+		
+		// String concat(String str)
+		String s6 = "Hello";
+		String s7 = s6.concat("World");
+		
+		System.out.println("String concat(String str)");
+		System.out.println(s6);
+		System.out.println(s7);
+		
+		// boolean contains (CharSequence s)
+		String s8 = "abcdefg";
+		boolean b = s8.contains("bc");
+		
+		System.out.println("boolean contains (CharSequence s)");
+		System.out.println(s8);
+		System.out.println(b);
+		
+		// boolean endsWith (String suffix)
+		String file = "Hello.txt";
+		boolean b2 = file.endsWith("txt");
+		
+		System.out.println("boolean endsWith (String suffix)");
+		System.out.println(b2);
+		
+		// boolean equals (Object obj)
+		String s9 = "Hello";
+		boolean b3 = s.equals("Hello");
+		boolean b4 = s.equals("hello");
+		
+		System.out.println("boolean endsWith (String suffix)");
+		System.out.println(s9);
+		System.out.println(b3);
+		System.out.println(b4);
+		
+		// boolean equals
 	}
 
 }
