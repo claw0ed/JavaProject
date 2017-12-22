@@ -83,6 +83,11 @@ public class ArrayLists {
 		for(String val : names)
 			System.out.println(val);
 		
+		// 검색 : indexOf(값)
+		int pos = names.indexOf("수지");
+		System.out.println("검색 : indexOf(값)");
+		System.out.println("수지의 위치 " + pos);
+		
 		// 순환자를 이용해서 컬렉션의 모든 요소 출력
 		// 컬렉션클래스로 선언된 요소를
 		// 하나씩 읽어오기 위한 표준화된 방식을 제공 - 속도 느림 ㅠㅠ
