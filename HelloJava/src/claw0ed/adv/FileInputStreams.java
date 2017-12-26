@@ -19,6 +19,7 @@ public class FileInputStreams {
 			int age = ois.readInt(); // 직렬화로 문자형을 파일에서 읽어옴
 			
 			System.out.println(name);
+			
 			System.out.println(u.userid);
 			System.out.println(u.passwd);
 			System.out.println(u.name);
