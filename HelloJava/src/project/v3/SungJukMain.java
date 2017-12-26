@@ -2,15 +2,13 @@ package project.v3;
 
 import java.util.Scanner;
 
-import project.v1.SungJukV0;
-
 public class SungJukMain {
 	
 	private static SungJukServiceImpl sjsrv = null;
 	private final static String EXITERROR = "\n종료작업시 희박하게 오류발생@!\n";
 	private final static String SAYGOODBYE = "\n즐거운 하루 되세요! ^^\n";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 		sjsrv = new SungJukServiceImpl();
 
 		while (true) {
@@ -30,7 +28,7 @@ public class SungJukMain {
 		System.out.print(menu.toString());
 	}
 
-	private static void selectMenu() {
+	private static void selectMenu() throws Throwable {
 		// 메뉴를 선택하고 작업 분기
 		Scanner sc = new Scanner(System.in);
 
@@ -132,7 +130,13 @@ public class SungJukMain {
 
 	}
 
-	private static void exitSungJuk() {
+	private static void exitSungJuk() throws Throwable {
+		try {
+			sjsrv.finalize();
+			System.out.println(SAYGOODBYE);
+		} catch (Exception e) {
+			System.out.println(EXITERROR);
+		}
  		System.exit(0);
 	}
 
