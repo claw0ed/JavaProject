@@ -1,5 +1,6 @@
 package claw0ed.adv;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -7,6 +8,7 @@ import project.v1.SungJukV0;
 
 public class HashMaps {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// 해시맵 - 데이터 저장은 느리지만, 많은 양의 데이터 검색시 유리
 		// 키와 값으로 데이터를 저장 - 키는 중복x, 값은 중복허용
@@ -81,6 +83,18 @@ public class HashMaps {
 			System.out.println(key2 + "/" + hmap2.get(key2));
 		else
 			System.out.println("데이터가 없어요!!");
+		
+		@SuppressWarnings({ "rawtypes", "unused" }) // 애너테이션  p703
+		Iterator it3 = hmap2.keySet().iterator();
+//		it3.next();
+		
+		Date today = new Date();
+		today.getYear();
+		today.getMonth();
+		today.getDay();
+		today.getHours();
+		today.getMinutes();
+		today.getSeconds();
 		
 	}
 
