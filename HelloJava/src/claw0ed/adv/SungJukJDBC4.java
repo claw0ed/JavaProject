@@ -17,6 +17,7 @@ public class SungJukJDBC4 {
 	private static String USR = "claw0ed";
 	private static String PWD = "123456";
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// 성적 처리 JDBC
 		
@@ -26,10 +27,11 @@ public class SungJukJDBC4 {
 		ResultSet rs = null;
 		
 		// SQL 관련 변수 선언
-		String selectSQL = "select sjno, name, kor, eng, mat, regdate from sungjuk order by sjno desc";
+		// String selectSQL = "select sjno, name, kor, eng, mat, regdate from sungjuk order by sjno desc";
+		String selectSQL = "select * from sungjuk order by sjno desc";
 		String selectOneSQL = "select * from sungjuk where sjno = ?";
 		String insertSQL = null;
-		String updateSQL = "update sungjuk set name = ?, kor = ?, eng = ?, mat = ? where sjno = ?";
+		String updateSQL = "update sungjuk set name = ?, kor = ?, eng = ?, mat = ?, tot = ?, avrg = ?, grd = ? where sjno = ?";
 		String deleteSQL = null;
 		
 		
@@ -53,6 +55,9 @@ public class SungJukJDBC4 {
 				sj.setKor(rs.getInt("kor"));
 				sj.setEng(rs.getInt("eng"));
 				sj.setMat(rs.getInt("mat"));
+				sj.setTot(rs.getInt("tot"));
+				sj.setAvrg(rs.getDouble("avrg"));
+				sj.setGrd(rs.getString("grd"));
 				sj.setRegdate(rs.getString("regdate").substring(0, 10)); // 2017-12-18 11:12:13
 			sjlist.add(sj);
 			}
@@ -64,21 +69,11 @@ public class SungJukJDBC4 {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("수정할 학생번호를 입력하세요");
 			int sjno = sc.nextInt();
-			System.out.println("수정할 점수를 입력하세요 (이름/국어/영어/수학)");
+			System.out.println("수정할 이름과 점수를 입력하세요 (이름/국어/영어/수학)");
 			String name = sc.next();
 			int kor = sc.nextInt();
 			int eng = sc.nextInt();
 			int mat = sc.nextInt();
-			
-			pstmt = conn.prepareStatement(updateSQL);
-			pstmt.setString(1, name); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			pstmt.setInt(2, kor); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			pstmt.setInt(3, eng); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			pstmt.setInt(4, mat); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			pstmt.setInt(5, sjno); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			
-			int cnt = pstmt.executeUpdate(); // insert, update, delete
-			System.out.println(cnt + "건의 데이터 추가 완료!");
 			
 			// 총점/평균/학점 처리
 			int tot = kor + eng + mat;
@@ -92,6 +87,33 @@ public class SungJukJDBC4 {
 			case 7: grd = "미"; break;
 			case 6: grd = "양"; break;
 			}
+			
+			pstmt = conn.prepareStatement(updateSQL);
+			pstmt.setString(1, name); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setInt(2, kor); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setInt(3, eng); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setInt(4, mat); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setInt(5, tot); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setDouble(6, avrg); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setString(7, grd); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setInt(8, sjno); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			
+			
+			int cnt = pstmt.executeUpdate(); // insert, update, delete
+			System.out.println(cnt + "건의 데이터 추가 완료!");
+			
+			// 총점/평균/학점 처리
+//			int tot = kor + eng + mat;
+//			double avrg = (double)tot / 3;
+//			String grd = "가";
+//			
+//			switch((int)avrg / 10) {
+//			case 10:
+//			case 9: grd = "수"; break;
+//			case 8: grd = "우"; break;
+//			case 7: grd = "미"; break;
+//			case 6: grd = "양"; break;
+//			}
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
