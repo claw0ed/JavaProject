@@ -57,7 +57,6 @@ public class SungJukJDBC6 {
 			// 4.
 			rs = pstmt.executeQuery(); // select
 			// 5.
-//			
 			
 			// 표준화된 방식
 			List<SungJukV0> sjlist = new ArrayList<>();

@@ -34,8 +34,6 @@ public class SungJukJDBC4 {
 		String updateSQL = "update sungjuk set name = ?, kor = ?, eng = ?, mat = ?, tot = ?, avrg = ?, grd = ? where sjno = ?";
 		String deleteSQL = null;
 		
-		
-		
 		try {
 			// 1.
 			Class.forName(DRV);
@@ -97,7 +95,6 @@ public class SungJukJDBC4 {
 			pstmt.setDouble(6, avrg); // 첫번째 ? 자리에 실제오 적용될 값 지정
 			pstmt.setString(7, grd); // 첫번째 ? 자리에 실제오 적용될 값 지정
 			pstmt.setInt(8, sjno); // 첫번째 ? 자리에 실제오 적용될 값 지정
-			
 			
 			int cnt = pstmt.executeUpdate(); // insert, update, delete
 			System.out.println(cnt + "건의 데이터 추가 완료!");
