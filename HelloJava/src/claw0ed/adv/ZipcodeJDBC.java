@@ -38,7 +38,7 @@ public class ZipcodeJDBC {
 			conn = DriverManager.getConnection(URL, USR, PWD);
 			// 3.
 			pstmt = conn.prepareStatement(selectSQL);
-			pstmt.setString(1, 도로명  + "%"); // 첫번째 ? 자리에 실제오 적용될 값 지정
+			pstmt.setString(1, 도로명  + "%"); // 첫번째 ? 자리에 실제로 적용될 값 지정
 			// 4.
 			rs = pstmt.executeQuery(); // select
 			// 5.
